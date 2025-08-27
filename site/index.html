@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolt - O Futuro da Mobilidade Elétrica</title>
+
+    <script>
+        window.wxOConfiguration = {
+            orchestrationID: "5408c5534f9741f49eef813c47a48b5f_3809cc3d-2f8d-4b39-ae8f-5c59211f64ab",
+            hostURL: "https://us-south.watson-orchestrate.cloud.ibm.com",
+            rootElementID: "root",
+            showLauncher: true,
+            crn: "crn:v1:bluemix:public:watsonx-orchestrate:us-south:a/5408c5534f9741f49eef813c47a48b5f:3809cc3d-2f8d-4b39-ae8f-5c59211f64ab::",
+            deploymentPlatform: "ibmcloud",
+            chatOptions: {
+                agentId: "6c7657db-4ca6-432b-bc34-984f657d3e55",
+                agentEnvironmentId: "02b9aaec-27e3-4546-af3a-18aa01818ed5"
+            },
+            layout: {
+                form: "float", 
+                showOrchestrateHeader: false, 
+                width: "600px",
+                height: "600px",
+            },
+            style: {
+                headerColor: '#3BA4C9',
+                userMessageBackgroundColor: '#3BA4C9',
+                primaryColor: '#3BA4C9'
+            },
+        };
+
+        setTimeout(function () {
+            const script = document.createElement('script');
+            script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+            script.addEventListener('load', function () {
+                wxoLoader.init();
+            });
+            document.head.appendChild(script);
+        }, 0);
+    </script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons: Lucide -->
+    <script src="https://unpkg.com/lucide-icons@latest/dist/lucide.js"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* bg-slate-900 */
+        }
+        /* Gradiente para o card de veículo no hover */
+        .card-hover-glow::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(0, 220, 255, 0.15), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 1;
+        }
+        .card-hover-glow:hover::before {
+            opacity: 1;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.6)), url('https://images.unsplash.com/photo-1631195669939-d1979b380c51?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-gray-300">
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-white">Jolt<span class="text-cyan-400">.</span></a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#destaques" class="text-gray-300 hover:text-cyan-400 transition duration-300">Destaques</a>
+                <a href="#sobre" class="text-gray-300 hover:text-cyan-400 transition duration-300">Sobre Nós</a>
+                <a href="#contato" class="text-gray-300 hover:text-cyan-400 transition duration-300">Contato</a>
+            </div>
+            <a href="#destaques" class="hidden md:block bg-cyan-500 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-cyan-400 transition duration-300">Ver Carros</a>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800/90 backdrop-blur-sm px-6 pb-4">
+            <a href="#destaques" class="block py-2 text-gray-300 hover:text-cyan-400">Destaques</a>
+            <a href="#sobre" class="block py-2 text-gray-300 hover:text-cyan-400">Sobre Nós</a>
+            <a href="#contato" class="block py-2 text-gray-300 hover:text-cyan-400">Contato</a>
+            <a href="#destaques" class="block mt-2 text-center bg-cyan-500 text-slate-900 px-6 py-2 rounded-full font-semibold hover:bg-cyan-400 transition duration-300">Ver Carros</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg text-white min-h-screen flex items-center pt-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 leading-tight">O Futuro da Mobilidade é <span class="text-cyan-400">Elétrico</span></h1>
+                <p class="text-base sm:text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">Descubra a nossa seleção premium de veículos elétricos. Tecnologia, sustentabilidade e performance ao seu alcance.</p>
+                <a href="#destaques" class="bg-cyan-500 text-slate-900 px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-cyan-400 transition duration-300 transform hover:scale-105">Explorar Veículos</a>
+            </div>
+        </section>
+
+        <!-- Featured Cars Section -->
+        <section id="destaques" class="py-16 md:py-20 lg:py-28 bg-slate-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12 md:mb-16">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Veículos em Destaque</h2>
+                    <p class="text-gray-400 mt-4 text-base md:text-lg">Explore os modelos mais inovadores e eficientes do mercado.</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    <!-- Car Card 1 -->
+                    <div class="bg-slate-900 rounded-xl overflow-hidden shadow-2xl shadow-cyan-500/5 border border-slate-700 transform transition duration-300 hover:-translate-y-2 relative card-hover-glow">
+                        <img src="https://images.unsplash.com/photo-1627993043232-9b699839485b?q=80&w=1974&auto=format&fit=crop" alt="Sedan Elétrico E-Volt Urban" class="w-full h-60 object-cover">
+                        <div class="p-6 relative z-10">
+                            <h3 class="text-2xl font-bold text-white mb-2">E-Volt Urban</h3>
+                            <div class="flex items-center text-gray-400 mb-4 space-x-2">
+                                <i data-lucide="battery-charging" class="w-5 h-5 text-cyan-400"></i>
+                                <span>Autonomia: 300 km</span>
+                            </div>
+                            <div class="text-3xl font-bold text-cyan-400 mb-6">R$ 159.990</div>
+                            <button class="w-full bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-600 transition duration-300">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 2 -->
+                    <div class="bg-slate-900 rounded-xl overflow-hidden shadow-2xl shadow-cyan-500/5 border border-slate-700 transform transition duration-300 hover:-translate-y-2 relative card-hover-glow">
+                        <img src="https://images.unsplash.com/photo-1666492583259-3a1334c91a0c?q=80&w=1964&auto=format&fit=crop" alt="SUV Elétrico E-Drive" class="w-full h-60 object-cover">
+                        <div class="p-6 relative z-10">
+                            <h3 class="text-2xl font-bold text-white mb-2">E-Drive SUV</h3>
+                             <div class="flex items-center text-gray-400 mb-4 space-x-2">
+                                <i data-lucide="battery-charging" class="w-5 h-5 text-cyan-400"></i>
+                                <span>Autonomia: 400 km</span>
+                            </div>
+                            <div class="text-3xl font-bold text-cyan-400 mb-6">R$ 189.990</div>
+                            <button class="w-full bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-600 transition duration-300">Ver Detalhes</button>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 3 -->
+                    <div class="bg-slate-900 rounded-xl overflow-hidden shadow-2xl shadow-cyan-500/5 border border-slate-700 transform transition duration-300 hover:-translate-y-2 relative card-hover-glow">
+                        <img src="https://images.unsplash.com/photo-1617178652685-c0a724128f69?q=80&w=2070&auto=format&fit=crop" alt="Esportivo Elétrico E-Sport GT" class="w-full h-60 object-cover">
+                        <div class="p-6 relative z-10">
+                            <h3 class="text-2xl font-bold text-white mb-2">E-Sport GT</h3>
+                             <div class="flex items-center text-gray-400 mb-4 space-x-2">
+                                <i data-lucide="battery-charging" class="w-5 h-5 text-cyan-400"></i>
+                                <span>Autonomia: 500 km</span>
+                            </div>
+                            <div class="text-3xl font-bold text-cyan-400 mb-6">R$ 299.990</div>
+                            <button class="w-full bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-600 transition duration-300">Ver Detalhes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="sobre" class="py-16 md:py-20 lg:py-28">
+            <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                <div class="lg:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1593361664103-6a97216a69a4?q=80&w=1932&auto=format&fit=crop" alt="Showroom da Jolt" class="rounded-xl shadow-2xl">
+                </div>
+                <div class="lg:w-1/2 text-center lg:text-left">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6">Especialistas em Mobilidade Elétrica</h2>
+                    <p class="text-gray-400 mb-4 leading-relaxed text-base md:text-lg">
+                        Na Jolt, somos apaixonados pela revolução elétrica. Nossa missão é guiar você na transição para uma condução mais sustentável e tecnológica. Oferecemos um portfólio exclusivo de veículos elétricos, selecionados para garantir a máxima qualidade e inovação.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed text-base md:text-lg">
+                        Acreditamos que o futuro é elétrico e estamos aqui para ajudar você a fazer parte dele. Visite-nos e sinta a energia da nova era automotiva.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-16 md:py-20 lg:py-28 bg-slate-800">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white">Entre em Contato</h2>
+                    <p class="text-gray-400 mt-4 text-base md:text-lg">Tem alguma dúvida? Mande uma mensagem para nós!</p>
+                </div>
+                <div class="max-w-2xl mx-auto bg-slate-900/50 p-6 sm:p-8 rounded-xl shadow-lg border border-slate-700">
+                    <form>
+                        <div class="mb-5">
+                            <label for="name" class="block text-gray-300 font-medium mb-2">Nome</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" placeholder="Seu nome completo">
+                        </div>
+                        <div class="mb-5">
+                            <label for="email" class="block text-gray-300 font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" placeholder="seu.email@exemplo.com">
+                        </div>
+                        <div class="mb-8">
+                            <label for="message" class="block text-gray-300 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-slate-800 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 text-white" placeholder="Escreva sua mensagem aqui..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-cyan-500 text-slate-900 px-6 py-3 sm:py-4 rounded-lg font-bold text-lg hover:bg-cyan-400 transition duration-300">Enviar Mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                 <div class="text-center md:text-left mb-6 md:mb-0">
+                    <a href="#" class="text-4xl font-bold text-white">Jolt<span class="text-cyan-400">.</span></a>
+                    <p class="text-gray-500 mt-2">&copy; 2025 Jolt Veículos. Todos os direitos reservados.</p>
+                 </div>
+                 <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300"><i data-lucide="facebook" class="w-7 h-7"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300"><i data-lucide="instagram" class="w-7 h-7"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-cyan-400 transition duration-300"><i data-lucide="message-circle" class="w-7 h-7"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializa ícones Lucide
+            lucide.createIcons();
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const header = document.getElementById('main-header');
+
+            // Toggle para menu mobile
+            mobileMenuButton.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Fecha menu mobile se clicar fora
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Lógica para mudar o fundo do header ao rolar a página
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                } else {
+                    header.classList.remove('bg-slate-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                }
+            };
+
+            window.addEventListener('scroll', handleScroll);
+        });
+    </script>
+
+</body>
+</html>

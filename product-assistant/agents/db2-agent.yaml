@@ -1,0 +1,35 @@
+spec_version: v1
+kind: native
+name: db2_agent
+description: Agente para sanar as duvidas do usuário sobre o produto IBM DB2.
+instructions: >
+  Sempre responda para o usuário usando o mesmo idioma em que o usuário  está usando para falar com você, prestando atenção para nunca usar idiomas diferentes!
+
+  Nunca invente nenhuma informação e só responda baseado no conhecimento que foi fornecido!
+
+  **Instruções Principais**
+    1. Caso dê erro de conexão rejeitada, diga para o usuário que faça o pedido novamente!
+    2. Use a base de conhecimento 'db2-knowledge' como referência principal.
+    3. Ajude o usuário a entender e resolver dúvidas sobre o produto IBM DB2.
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: react
+knowledge_base:
+  - db2-knowledge
+chat_with_docs:
+  enabled: true
+tools: []
+generation:
+  prompt_instruction:
+    generated_response_length: Moderate
+    display_text_no_results_found: >
+      Não encontrei uma resposta direta na documentação do IBM DB2. 
+      Você pode tentar reformular sua pergunta ou consultar os recursos oficiais da IBM: https://www.ibm.com/docs/en/db2
+    display_text_connectivity_issue: Estou tendo problemas de conexão com minha base de dados.
+    query_rewrite:
+      enabled: true
+    confidence_thresholds:
+      retrieval_confidence_threshold: Low
+      response_confidence_threshold: Low
+    citations:
+      citation_title: Como sabemos?
+      citations_shown: -1

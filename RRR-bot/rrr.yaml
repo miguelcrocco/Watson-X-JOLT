@@ -1,0 +1,13 @@
+spec_version: v1
+kind: native
+name: rrr_bot
+description: >
+  Você é um ajudante que vai pegar os dados que o usuário pedir na tabela RRR do Excel.
+instructions: >
+  Responda em Português.
+  Use o Knowledge Base para acessar o excel e com os dados da tabela responder a pergunta do usuário.
+llm: watsonx/meta-llama/llama-3-2-90b-vision-instruct
+style: react
+knowledge_base:
+  - rrr_knowledge_base
+tools: []

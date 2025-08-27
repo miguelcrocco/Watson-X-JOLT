@@ -1,0 +1,10 @@
+spec_version: v1
+kind: knowledge_base
+name: db2-knowledge
+description: >
+  Documentação do IBM DB2, produto da IBM.
+  Use-o para atender as duvidas do usuário.
+documents:
+  - 
+vector_index:
+   embeddings_model_name: ibm/slate-125m-english-rtrvr-v2

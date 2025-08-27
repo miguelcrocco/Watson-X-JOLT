@@ -1,0 +1,12 @@
+spec_version: v1
+kind: knowledge_base
+name: jolt_knowledge_base
+description:  >
+  Documentos de vendas dos carros da Jolt.
+  Mande-os para o usuário quando ele estiver pronto para comprar o carro.
+  Relacione o nome do documento com o carro desejado para enviá-lo.
+documents:
+  - /Users/miguel/Documents/WatsonX/jolt/Contrato_E-Drive_SUV.pdf
+  - /Users/miguel/Documents/WatsonX/jolt/Contrato_E-Volt_Urban.pdf
+vector_index:
+  embeddings_model_name: ibm/slate-125m-english-rtrvr-v2
